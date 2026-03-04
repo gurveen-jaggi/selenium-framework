@@ -9,6 +9,7 @@ class LoginPage(BasePage):
     PASSWORD = (By.ID, "password")
     LOGIN_BUTTON = (By.CSS_SELECTOR, "button[type = 'submit']")
     FLASH_MESSAGE = (By.ID,"flash")
+    SIMPLE_ALERT = (By.PARTIAL_LINK_TEXT,"Click for JS Alert")
 
     def open(self, url):
         self.driver.get(url)
@@ -25,3 +26,4 @@ class LoginPage(BasePage):
 
     def get_flash_message(self):
         return self.get_text(self.FLASH_MESSAGE)
+

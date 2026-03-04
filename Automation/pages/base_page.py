@@ -16,3 +16,19 @@ class BasePage:
     def get_text(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).text
 
+    def accept_alert(self):
+        alert = self.driver.switch_to.alert
+        alert.accept()
+
+    def dismiss_alert(self):
+        alert = self.driver.switch_to.alert
+        alert.dismiss()
+
+    def get_alert_text(self):
+        alert = self.driver.switch_to.alert
+        return alert.text
+
+    def send_text_to_alert(self,text):
+        alert = self.driver.switch_to.alert
+        alert.send_keys(text)
+        alert.accept()

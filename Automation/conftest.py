@@ -3,6 +3,8 @@ import os
 from selenium import webdriver
 from datetime import datetime
 
+from Automation.utils.config_reader import ConfigReader
+
 
 @pytest.fixture
 def driver():
@@ -11,6 +13,8 @@ def driver():
     yield driver
     driver.quit()
 
+def config():
+    return ConfigReader()
 
 # Hook to capture screenshot on failure
 @pytest.hookimpl(hookwrapper=True)
