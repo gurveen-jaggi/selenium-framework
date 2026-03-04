@@ -14,6 +14,7 @@ class AlertsPage(BasePage):
     CONFIRM_ALERT = (By.XPATH, "//button[text()='Click for JS Confirm']")
     PROMPT_ALERT = (By.XPATH, "//button[text()='Click for JS Prompt']")
 
+
     def click_simple_alert(self):
      self.driver.find_element(*self.SIMPLE_ALERT).click()
 

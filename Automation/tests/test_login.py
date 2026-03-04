@@ -82,3 +82,12 @@ def test_prompt_alert(driver):
     alerts_page.click_prompt_alert()
     alerts_page.send_text_to_alert("Hello Gurveen")
 
+def test_prompt_alert(driver):
+    config = ConfigReader()
+    driver.get(config.get("alert_url"))
+    alerts_page = AlertsPage(driver)
+    alerts_page.click_prompt_alert()
+    alert_text = alerts_page.get_alert_text()
+    assert alert_text == "I am a JS prompt"
+    alerts_page.send_text_to_alert("Hello")
+
