@@ -32,3 +32,13 @@ class BasePage:
         alert = self.driver.switch_to.alert
         alert.send_keys(text)
         alert.accept()
+
+    def switch_to_frame(self, locator):
+        frame = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(locator)
+        )
+
+        self.driver.switch_to.frame(frame)
+
+    def switch_to_default(self):
+        self.driver.switch_to.default_content()

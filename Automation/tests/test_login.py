@@ -23,6 +23,8 @@
 from Automation.pages.login_page import LoginPage
 from Automation.utils.config_reader import ConfigReader
 from Automation.pages.alerts_page import AlertsPage
+from Automation.pages.iframes import IframePage
+
 
 
 def test_valid_login(driver):
@@ -91,3 +93,12 @@ def test_prompt_alert(driver):
     assert alert_text == "I am a JS prompt"
     alerts_page.send_text_to_alert("Hello")
 
+
+def test_iframe_editor(driver):
+
+    config = ConfigReader()
+    driver.get(config.get("iframe_url"))
+    page = IframePage(driver)
+    page.switch_to_editor()
+    page.enter_text("Learning Frames in Selenium for interviews")
+    page.switch_to_default()

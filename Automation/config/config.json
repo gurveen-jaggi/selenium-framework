@@ -6,5 +6,6 @@
   "invalid_password": "wrong",
   "browser": "chrome",
   "timeout": 10,
-  "alert_url" : "https://the-internet.herokuapp.com/javascript_alerts"
+  "alert_url" : "https://the-internet.herokuapp.com/javascript_alerts",
+  "iframe_url" : "https://the-internet.herokuapp.com/iframe"
 }
