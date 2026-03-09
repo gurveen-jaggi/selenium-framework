@@ -1,3 +1,4 @@
+from selenium.webdriver import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -42,3 +43,11 @@ class BasePage:
 
     def switch_to_default(self):
         self.driver.switch_to.default_content()
+
+    def select_from_search_dropdown(self, locator,value):
+
+        dropdown = WebDriverWait(self.driver,10).until(EC.element_to_be_clickable(locator))
+        dropdown.send_keys(value)
+        dropdown.send_keys(Keys.RETURN)
+
+

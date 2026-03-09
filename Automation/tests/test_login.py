@@ -24,7 +24,8 @@ from Automation.pages.login_page import LoginPage
 from Automation.utils.config_reader import ConfigReader
 from Automation.pages.alerts_page import AlertsPage
 from Automation.pages.iframes import IframePage
-
+from Automation.pages.custom_dropdown_page import CustomDropdownPage
+from Automation.pages.dropdown_page import DropdownPage
 
 
 def test_valid_login(driver):
@@ -102,3 +103,16 @@ def test_iframe_editor(driver):
     page.switch_to_editor()
     page.enter_text("Learning Frames in Selenium for interviews")
     page.switch_to_default()
+
+def test_select_dropdown(driver):
+    config = ConfigReader()
+    driver.get(config.get("select_dropdown_url"))
+    page = DropdownPage(driver)
+    page.select_option_by_text("Option 1")
+
+def test_custom_dropdown_page(driver):
+    config = ConfigReader()
+    driver.get(config.get("custom_dropdown_url"))
+    page = CustomDropdownPage(driver)
+    page.select_title("Dr.")
+
