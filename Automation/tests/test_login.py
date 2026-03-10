@@ -1,4 +1,4 @@
-
+from Automation.pages.checkbox_page import CheckboxPage
 # from Automation.config.config import BASE_URL, VALID_USERNAME, VALID_PASSWORD
 
 # def test_login_valid(driver):
@@ -27,6 +27,7 @@ from Automation.pages.alerts_page import AlertsPage
 from Automation.pages.iframes import IframePage
 from Automation.pages.custom_dropdown_page import CustomDropdownPage
 from Automation.pages.dropdown_page import DropdownPage
+from Automation.pages.checkbox_page import CheckboxPage
 
 
 def test_valid_login(driver):
@@ -123,3 +124,8 @@ def test_standard_multiselect_dropdown(driver):
     pages = MultiSelectDropdownPage(driver)
     pages.select_cars(['Saab','Opel',"Audi"])
 
+def test_multiple_checkboxes(driver):
+    config = ConfigReader()
+    driver.get(config.get("checkbox_page_url"))
+    page = CheckboxPage(driver)
+    page.select_checkboxes(["Check Box One","Check Box Three"])
