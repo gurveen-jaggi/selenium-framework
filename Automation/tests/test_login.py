@@ -21,6 +21,7 @@
 
 
 from Automation.pages.login_page import LoginPage
+from Automation.pages.multiselect_dropdown_page import MultiSelectDropdownPage
 from Automation.utils.config_reader import ConfigReader
 from Automation.pages.alerts_page import AlertsPage
 from Automation.pages.iframes import IframePage
@@ -115,4 +116,10 @@ def test_custom_dropdown_page(driver):
     driver.get(config.get("custom_dropdown_url"))
     page = CustomDropdownPage(driver)
     page.select_title("Dr.")
+
+def test_standard_multiselect_dropdown(driver):
+    config = ConfigReader()
+    driver.get(config.get("standard_multiselect_url"))
+    pages = MultiSelectDropdownPage(driver)
+    pages.select_cars(['Saab','Opel',"Audi"])
 

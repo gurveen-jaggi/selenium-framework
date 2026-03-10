@@ -1,6 +1,7 @@
 from selenium.webdriver import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import Select
 
 class BasePage:
 
@@ -49,5 +50,17 @@ class BasePage:
         dropdown = WebDriverWait(self.driver,10).until(EC.element_to_be_clickable(locator))
         dropdown.send_keys(value)
         dropdown.send_keys(Keys.RETURN)
+
+    def select_multiple_options(self , locator, values):
+        element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(locator))
+
+        select = Select(element)
+
+        for val in values:
+            select.select_by_visible_text(val)
+
+
+
+
 
 

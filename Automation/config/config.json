@@ -9,5 +9,6 @@
   "alert_url" : "https://the-internet.herokuapp.com/javascript_alerts",
   "iframe_url" : "https://the-internet.herokuapp.com/iframe",
   "select_dropdown_url": "https://the-internet.herokuapp.com/dropdown",
-  "custom_dropdown_url": "https://demoqa.com/select-menu"
+  "custom_dropdown_url": "https://demoqa.com/select-menu",
+  "standard_multiselect_url" : "https://demoqa.com/select-menu"
 }
