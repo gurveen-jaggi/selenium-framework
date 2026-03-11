@@ -11,5 +11,6 @@
   "select_dropdown_url": "https://the-internet.herokuapp.com/dropdown",
   "custom_dropdown_url": "https://demoqa.com/select-menu",
   "standard_multiselect_url" : "https://demoqa.com/select-menu",
-  "checkbox_page_url" : "https://selenium.qabible.in/check-box-demo.php"
+  "checkbox_page_url" : "https://selenium.qabible.in/check-box-demo.php",
+  "drag_drop_url": "https://jqueryui.com/droppable/"
 }

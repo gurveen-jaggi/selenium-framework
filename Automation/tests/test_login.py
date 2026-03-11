@@ -28,7 +28,8 @@ from Automation.pages.iframes import IframePage
 from Automation.pages.custom_dropdown_page import CustomDropdownPage
 from Automation.pages.dropdown_page import DropdownPage
 from Automation.pages.checkbox_page import CheckboxPage
-
+from Automation.pages.drag_and_drop import DragDropPage
+from selenium.webdriver.common.by import By
 
 def test_valid_login(driver):
     config = ConfigReader()
@@ -129,3 +130,12 @@ def test_multiple_checkboxes(driver):
     driver.get(config.get("checkbox_page_url"))
     page = CheckboxPage(driver)
     page.select_checkboxes(["Check Box One","Check Box Three"])
+
+def test_drag_drop(driver):
+    config = ConfigReader()
+    driver.get(config.get("drag_drop_url"))
+    page = DragDropPage(driver)
+
+    # switch to iframe FIRST
+    page.switch_to_drag_frame()
+    page.perform_drag_drop()

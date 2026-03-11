@@ -2,6 +2,7 @@ from selenium.webdriver import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.action_chains import ActionChains
 
 class BasePage:
 
@@ -59,7 +60,36 @@ class BasePage:
         for val in values:
             select.select_by_visible_text(val)
 
+    def hover(self, locator):
+        element = self.driver.find_element(*locator)
+        actions = ActionChains(self.driver)
 
+        actions.move_to_element(element).perform()
+
+    def right_click(self, locator):
+        element = self.driver.find_element(*locator)
+        actions = ActionChains(self.driver)
+
+        actions.context_click(element).perform()
+
+    def double_click(self, locator):
+        element = self.driver.find_element(*locator)
+        actions = ActionChains(self.driver)
+
+        actions.double_click(element).perform()
+
+    def drag_and_drop(self, source_locator, target_locator):
+        source = self.driver.find_element(*source_locator)
+        target = self.driver.find_element(*target_locator)
+        actions = ActionChains(self.driver)
+
+        actions.drag_and_drop(source,target).perform()
+
+    def drag_slider(self, locator, x_offset):
+        slider = self.driver.find_element(*locator)
+        actions = ActionChains(self.driver)
+
+        actions.click_and_hold(slider).move_by_offset(x_offset,0).release().perform()
 
 
 
