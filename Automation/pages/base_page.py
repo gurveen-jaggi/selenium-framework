@@ -91,6 +91,10 @@ class BasePage:
 
         actions.click_and_hold(slider).move_by_offset(x_offset,0).release().perform()
 
+    def move_slider(self, locator, x_offset):
+        slider = self.driver.find_element(*locator)
+        actions = ActionChains(self.driver)
 
+        actions.click_and_hold(slider).move_by_offset(x_offset,0).release().perform()
 
 

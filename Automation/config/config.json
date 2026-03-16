@@ -12,5 +12,6 @@
   "custom_dropdown_url": "https://demoqa.com/select-menu",
   "standard_multiselect_url" : "https://demoqa.com/select-menu",
   "checkbox_page_url" : "https://selenium.qabible.in/check-box-demo.php",
-  "drag_drop_url": "https://jqueryui.com/droppable/"
+  "drag_drop_url": "https://jqueryui.com/droppable/",
+  "slider_url": "https://jqueryui.com/slider/"
 }
